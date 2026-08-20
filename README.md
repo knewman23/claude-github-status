@@ -11,8 +11,9 @@ https://www.githubstatus.com at a glance.
   worst status across both services: **coral** when everything is operational, **amber** on a
   minor issue, **orange/red** on a partial or major outage, **deep red** on a critical outage,
   **blue** during maintenance, **grey** if a status page can't be reached.
-- A badge names the service that isn't happy: `C` for Claude, `G` for GitHub, `!!` if both.
-  Hovering gives you both services' status on separate lines.
+- No badge. Chrome anchors its badge bottom-right at a fixed size, which covers ~52% of a 16px
+  action icon — and because the badge only appears when something is wrong, it blotted out the
+  icon exactly when you wanted to read it. Hover names both services and their status instead.
 - Click for a popup: one stacked section per service with its overall status, any active
   incident or scheduled maintenance, and a per-component list.
 - Polls both `/api/v2/summary.json` endpoints every 2 minutes, plus once whenever you open the
@@ -62,10 +63,19 @@ MV3 code here is Chrome-targeted. Say the word if you want a Firefox build.
 | `icons/mark-source.png` | Full-resolution 1200px original, kept as the source of truth |
 | `icons/icon*.png` | Static fallback icons, generated from the artwork at operational coral |
 
-The in-browser icon is cropped to the burst and the head. The tentacles are the first thing to
-turn to mush in a 16px toolbar slot, and dropping them makes everything that's left about 40%
-bigger — the difference between a readable cat and a dark smudge. `mark-source.png` keeps the
-whole illustration, and that's what's shown at the top of this README.
+### Replacing the artwork
+
+Drop in a square transparent PNG (1024px or larger) and regenerate the four sizes from it. The
+mark has to survive a 16px toolbar slot, so:
+
+- Fill the frame — no padding.
+- Nothing thinner than 8% of the canvas, and no detail below 6%. Sub-pixel strokes antialias
+  into scattered noise at 16px.
+- Keep it to a handful of shapes, readable on both dark and light toolbars.
+
+The recolouring keys on hue, so whatever should change colour must be saturated orange
+(hue 0.02–0.12, saturation >0.35, anchored on `#EB7247`) and everything that should stay put
+must sit outside that range — near-black `#181716` and cream `#F7EBDE` both do.
 
 ## Adding another Statuspage service
 

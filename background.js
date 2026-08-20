@@ -108,27 +108,27 @@ async function drawMark(size, color) {
 
 /* --------------------------------------------------------------- paint ---- */
 
-// Worst status across every service drives the icon; the badge says which one.
+// Worst status across every service drives the icon colour.
+//
+// No badge. Chrome draws its badge at a fixed size anchored bottom-right, which
+// on a 16px action icon covers ~52% of the artwork — and since the badge only
+// appears when something is wrong, it blotted out the icon exactly when you
+// wanted to look at it. The spoke colour carries the signal instead, and the
+// tooltip names both services.
 function summarise(services) {
   let worst = "none";
-  const unhappy = [];
   for (const svc of SERVICES) {
     const indicator = services[svc.key]?.indicator || "unknown";
     if (style(indicator).rank > style(worst).rank) worst = indicator;
-    if (indicator !== "none") unhappy.push(svc);
   }
-  const badge =
-    unhappy.length === 0 ? "" :
-    unhappy.length === 1 ? unhappy[0].label[0] :
-    "!!";
   const title = SERVICES
     .map((s) => `${s.label}: ${services[s.key]?.description || "unknown"}`)
     .join("\n");
-  return { worst, badge, title };
+  return { worst, title };
 }
 
 async function paint(services) {
-  const { worst, badge, title } = summarise(services);
+  const { worst, title } = summarise(services);
   const color = style(worst).color;
 
   await chrome.action.setIcon({
@@ -138,8 +138,8 @@ async function paint(services) {
       48: await drawMark(48, color),
     },
   });
-  await chrome.action.setBadgeText({ text: badge });
-  await chrome.action.setBadgeBackgroundColor({ color });
+  // Clear any badge a previous version left behind.
+  await chrome.action.setBadgeText({ text: "" });
   await chrome.action.setTitle({ title });
 }
 
