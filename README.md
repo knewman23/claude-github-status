@@ -7,7 +7,7 @@
 When your dev tools take an unscheduled day off. Toolbar extension that shows the current
 state of https://status.claude.com and https://www.githubstatus.com at a glance.
 
-Unofficial — not affiliated with Anthropic or GitHub.
+Unofficial — not affiliated with Anthropic or GitHub. [Privacy policy](PRIVACY.md).
 
 ![The popup: both services stacked, with an open GitHub incident surfaced](docs/preview.png)
 
