@@ -121,8 +121,8 @@ function summarise(services) {
     const indicator = services[svc.key]?.indicator || "unknown";
     if (style(indicator).rank > style(worst).rank) worst = indicator;
   }
-  const title = SERVICES
-    .map((s) => `${s.label}: ${services[s.key]?.description || "unknown"}`)
+  const title = ["Dev PTO", ...SERVICES
+    .map((s) => `${s.label}: ${services[s.key]?.description || "unknown"}`)]
     .join("\n");
   return { worst, title };
 }

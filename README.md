@@ -2,10 +2,12 @@
   <img src="icons/logo.png" alt="Octocat wrapped in a Claude burst" width="260">
 </p>
 
-# Claude + GitHub Status
+# Dev PTO
 
-Toolbar extension that shows the current state of https://status.claude.com and
-https://www.githubstatus.com at a glance.
+When your dev tools take an unscheduled day off. Toolbar extension that shows the current
+state of https://status.claude.com and https://www.githubstatus.com at a glance.
+
+Unofficial — not affiliated with Anthropic or GitHub.
 
 ![The popup: both services stacked, with an open GitHub incident surfaced](docs/preview.png)
 

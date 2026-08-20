@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Claude + GitHub Status",
-  "version": "1.1.0",
-  "description": "Claude and GitHub service status at a glance, from their status pages.",
+  "name": "Dev PTO",
+  "version": "1.2.0",
+  "description": "When your dev tools take an unscheduled day off. Live Claude and GitHub status. Unofficial.",
   "permissions": [
     "alarms",
     "storage"
@@ -12,7 +12,7 @@
     "type": "module"
   },
   "action": {
-    "default_title": "Claude + GitHub Status",
+    "default_title": "Dev PTO",
     "default_popup": "popup.html",
     "default_icon": {
       "16": "icons/icon16.png",
