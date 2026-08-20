@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="icons/mark-source.png" alt="Octocat wrapped in a Claude burst" width="200">
+  <img src="icons/logo.png" alt="Octocat wrapped in a Claude burst" width="260">
 </p>
 
 # Claude + GitHub Status
@@ -59,7 +59,8 @@ some builds — dismissing it is fine, or pack it as a `.crx` if you want that g
 | `background.js` | Polls both APIs, recolours the icon with OffscreenCanvas, sets the tooltip |
 | `popup.html` / `popup.js` | The dropdown UI, light/dark aware |
 | `icons/mark.png` | 256px artwork the runtime recolours (spokes are hue-swapped, the cat isn't) |
-| `icons/mark-source.png` | Full-resolution 1222px original, kept as the source of truth |
+| `icons/logo.png` | The original illustration, full resolution. Display only — the README hero |
+| `icons/mark-source.png` | Full-resolution 1222px source for the icon, redrawn to survive 16px |
 | `icons/icon*.png` | Static fallback icons, generated from the artwork at operational coral |
 
 ## Adding another Statuspage service
