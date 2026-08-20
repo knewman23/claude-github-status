@@ -39,7 +39,7 @@ service is escalated to its worst unresolved incident impact and labelled **Open
 
 If a page already reports a problem, its own indicator is trusted as-is and never escalated.
 
-## Install (Chrome / Brave / Edge / Arc)
+## Install
 
 1. Go to `chrome://extensions` and turn on **Developer mode** (top right).
 2. Click **Load unpacked** and select this folder.
