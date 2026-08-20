@@ -49,11 +49,6 @@ If a page already reports a problem, its own indicator is trusted as-is and neve
 It stays installed across restarts. Chrome shows a "disable developer mode extensions" nag on
 some builds — dismissing it is fine, or pack it as a `.crx` if you want that gone.
 
-## Install (Firefox)
-
-Firefox needs `browser_specific_settings` and treats `chrome.action` as `browser.action`; the
-MV3 code here is Chrome-targeted. Say the word if you want a Firefox build.
-
 ## Files
 
 | File | Role |
