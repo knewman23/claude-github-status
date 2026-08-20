@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="icons/mark-source.png" alt="Octocat wrapped in a Claude burst" width="200">
+</p>
+
 # Claude + GitHub Status
 
 Toolbar extension that shows the current state of https://status.claude.com and
