@@ -62,6 +62,11 @@ MV3 code here is Chrome-targeted. Say the word if you want a Firefox build.
 | `icons/mark-source.png` | Full-resolution 1200px original, kept as the source of truth |
 | `icons/icon*.png` | Static fallback icons, generated from the artwork at operational coral |
 
+The in-browser icon is cropped to the burst and the head. The tentacles are the first thing to
+turn to mush in a 16px toolbar slot, and dropping them makes everything that's left about 40%
+bigger — the difference between a readable cat and a dark smudge. `mark-source.png` keeps the
+whole illustration, and that's what's shown at the top of this README.
+
 ## Adding another Statuspage service
 
 Both services go through one parser, so adding a third is a single entry in `SERVICES` at the
