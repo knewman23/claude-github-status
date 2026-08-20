@@ -18,6 +18,8 @@ https://www.githubstatus.com at a glance.
   incident or scheduled maintenance, and a per-component list.
 - Polls both `/api/v2/summary.json` endpoints every 2 minutes, plus once whenever you open the
   popup. No accounts, no tracking, no other network access.
+- Requests no host permissions. Both status APIs send `Access-Control-Allow-Origin: *`, so the
+  service worker can fetch them without being granted access to any site.
 
 ## What's shown per service
 
@@ -56,7 +58,7 @@ MV3 code here is Chrome-targeted. Say the word if you want a Firefox build.
 
 | File | Role |
 |---|---|
-| `manifest.json` | MV3 manifest — permissions are just `alarms`, `storage`, and the two status hosts |
+| `manifest.json` | MV3 manifest — the only permissions are `alarms` and `storage` |
 | `background.js` | Polls both APIs, recolours the icon with OffscreenCanvas, sets badge + tooltip |
 | `popup.html` / `popup.js` | The dropdown UI, light/dark aware |
 | `icons/mark.png` | 256px artwork the runtime recolours (spokes are hue-swapped, the cat isn't) |

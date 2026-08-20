@@ -3,12 +3,14 @@
   "name": "Claude + GitHub Status",
   "version": "1.1.0",
   "description": "Claude and GitHub service status at a glance, from their status pages.",
-  "permissions": ["alarms", "storage"],
-  "host_permissions": [
-    "https://status.claude.com/*",
-    "https://www.githubstatus.com/*"
+  "permissions": [
+    "alarms",
+    "storage"
   ],
-  "background": { "service_worker": "background.js", "type": "module" },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
   "action": {
     "default_title": "Claude + GitHub Status",
     "default_popup": "popup.html",
