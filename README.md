@@ -54,30 +54,17 @@ some builds — dismissing it is fine, or pack it as a `.crx` if you want that g
 | File | Role |
 |---|---|
 | `manifest.json` | MV3 manifest — the only permissions are `alarms` and `storage` |
-| `background.js` | Polls both APIs, recolours the icon with OffscreenCanvas, sets badge + tooltip |
+| `background.js` | Polls both APIs, recolours the icon with OffscreenCanvas, sets the tooltip |
 | `popup.html` / `popup.js` | The dropdown UI, light/dark aware |
 | `icons/mark.png` | 256px artwork the runtime recolours (spokes are hue-swapped, the cat isn't) |
-| `icons/mark-source.png` | Full-resolution 1200px original, kept as the source of truth |
+| `icons/mark-source.png` | Full-resolution 1222px original, kept as the source of truth |
 | `icons/icon*.png` | Static fallback icons, generated from the artwork at operational coral |
-
-### Replacing the artwork
-
-Drop in a square transparent PNG (1024px or larger) and regenerate the four sizes from it. The
-mark has to survive a 16px toolbar slot, so:
-
-- Fill the frame — no padding.
-- Nothing thinner than 8% of the canvas, and no detail below 6%. Sub-pixel strokes antialias
-  into scattered noise at 16px.
-- Keep it to a handful of shapes, readable on both dark and light toolbars.
-
-The recolouring keys on hue, so whatever should change colour must be saturated orange
-(hue 0.02–0.12, saturation >0.35, anchored on `#EE6939`) and everything that should stay put
-must sit outside that range — near-black `#181716` and cream `#F7EBDE` both do.
 
 ## Adding another Statuspage service
 
 Both services go through one parser, so adding a third is a single entry in `SERVICES` at the
-top of `background.js` (plus its host in `manifest.json`):
+top of `background.js`. No manifest change is needed — Statuspage sends
+`Access-Control-Allow-Origin: *`, so no host permission is required:
 
 ```js
 { key: "vercel", label: "Vercel",
