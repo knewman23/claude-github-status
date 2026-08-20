@@ -74,7 +74,7 @@ mark has to survive a 16px toolbar slot, so:
 - Keep it to a handful of shapes, readable on both dark and light toolbars.
 
 The recolouring keys on hue, so whatever should change colour must be saturated orange
-(hue 0.02–0.12, saturation >0.35, anchored on `#EB7247`) and everything that should stay put
+(hue 0.02–0.12, saturation >0.35, anchored on `#EE6939`) and everything that should stay put
 must sit outside that range — near-black `#181716` and cream `#F7EBDE` both do.
 
 ## Adding another Statuspage service

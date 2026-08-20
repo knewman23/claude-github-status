@@ -22,7 +22,7 @@ const SERVICES = [
 // Statuspage indicator -> how we present it. `rank` picks the winner when the
 // two services disagree.
 const INDICATORS = {
-  none:        { rank: 0, color: "#EB7247", label: "All Systems Operational" },
+  none:        { rank: 0, color: "#EE6939", label: "All Systems Operational" },
   maintenance: { rank: 1, color: "#5B8FD9", label: "Under Maintenance" },
   unknown:     { rank: 2, color: "#8A8A8A", label: "Status Unavailable" },
   minor:       { rank: 3, color: "#E8A33D", label: "Minor Issue" },
@@ -36,7 +36,7 @@ const style = (indicator) => INDICATORS[indicator] || INDICATORS.unknown;
 
 // The artwork's coral spokes, measured off icons/mark.png. Pixels matching this
 // hue get retinted to the current status colour; the octocat is left alone.
-const CORAL = { h: 0.0437, s: 0.6979, v: 0.9216 };
+const CORAL = { h: 0.0442, s: 0.7605, v: 0.9333 };
 const CORAL_HUE_RANGE = [0.02, 0.12];
 const CORAL_MIN_SAT = 0.35;
 

@@ -1,5 +1,5 @@
 const INDICATOR_COLORS = {
-  none: "#EB7247", minor: "#E8A33D", major: "#DC5A3C",
+  none: "#EE6939", minor: "#E8A33D", major: "#DC5A3C",
   critical: "#B4231C", maintenance: "#5B8FD9", unknown: "#8A8A8A",
 };
 const COMPONENT_COLORS = {
