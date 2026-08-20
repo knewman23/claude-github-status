@@ -7,6 +7,8 @@
 Toolbar extension that shows the current state of https://status.claude.com and
 https://www.githubstatus.com at a glance.
 
+![The popup: both services stacked, with an open GitHub incident surfaced](docs/preview.png)
+
 - The icon is the octocat wrapped in a Claude burst. Its **spokes** are recoloured to the
   worst status across both services: **coral** when everything is operational, **amber** on a
   minor issue, **orange/red** on a partial or major outage, **deep red** on a critical outage,
